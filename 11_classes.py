@@ -1,13 +1,21 @@
-# Classes
-# Classes are blueprints for creating objects. They encapsulate data and behavior.
-# A class is defined using the `class` keyword followed by the class name and a colon.
-# Classes can have attributes (data) and methods (functions) that operate on that data.
-# Classes can also have a constructor method `__init__` that initializes the object's attributes.
-# Classes can be empty, meaning they do not have any attributes or methods defined.
-# Classes can also have methods that perform actions or calculations.
-# Classes can be instantiated to create objects, which are instances of the class.
-# Classes can be used to create objects with specific attributes and methods.
-# Classes are a fundamental part of object-oriented programming in Python.
+# Clases
+# Las clases son plantillas para crear objetos. Encapsulan datos y comportamiento.
+
+# Una clase se define usando la palabra clave `class` seguida del nombre de la clase y dos puntos.
+
+# Las clases pueden tener atributos (datos) y métodos (funciones) que operan sobre esos datos.
+
+# Las clases también pueden tener un método constructor `__init__` que inicializa los atributos del objeto.
+
+# Las clases pueden estar vacías, es decir, no tienen atributos ni métodos definidos.
+
+# Las clases también pueden tener métodos que realizan acciones o cálculos.
+
+# Las clases se pueden instanciar para crear objetos, que son instancias de la clase.
+
+# Las clases se pueden usar para crear objetos con atributos y métodos específicos.
+
+# Las clases son una parte fundamental de la programación orientada a objetos en Python.
 
 
 class MyEmptyPerson:
@@ -17,6 +25,7 @@ print(MyEmptyPerson)
 print(MyEmptyPerson())
 print(type(MyEmptyPerson))
 
+print("\n")
 
 class Person:
     def __init__(self, age, name = "Pepe", surname = "Loco"):
@@ -33,6 +42,7 @@ class Person:
     
     def greating(self):
         return f"Hola, soy {self.full_name()} y tengo {self.age} años"
+    
     def walk(self):
         print(f"{self.full_name()} está caminando. {self.full_name()}")
     
