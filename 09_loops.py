@@ -18,6 +18,7 @@ for i in range(0,10,2):  # Iterar desde 0 hasta 10 con un paso de 2
 else:
     print(f"Fin del for 1")
 
+    
 
 # break statement
 print(f"\n break statement")
@@ -89,3 +90,5 @@ for value in my_dict.values():  # Iterar sobre cada valor del diccionario
     print(f"Continuando con el siguiente valor: {value}")  # Imprimir si se continúa
 else:
     print(f"Fin del for in dict values")
+
+
