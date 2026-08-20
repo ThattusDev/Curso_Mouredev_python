@@ -1,103 +1,69 @@
-# Exceptions Handling in Python
-# Exceptions are used to handle errors and other exceptional events in Python.
-# They allow you to manage errors gracefully without crashing the program.
+# Manejo de excepciones en Python
+# Las excepciones se utilizan para manejar errores y otros eventos excepcionales en Python.
+# Permiten gestionar errores de manera elegante sin hacer que el programa se bloquee.
 
-x = int(input())
-y = int(input())
-z = int(input())
+numero_1, numero_2 = 10, 2
+numero_2 = "0" 
+#print(numero_1 + numero_2)
 
-n = int(input())
+# try except
+try:
+    print(numero_1 + numero_2)
+    print("No se ha producido un error")
+except: 
+    # se ejecuta si se produce un error en el bloque try
+    print("Se a producido un error")
 
-'''
-resultado = []
-for i in range(x + 1):
-    for j in range(y + 1):
-        for k in range(z + 1):
-            if i + j + k != n:
-                resultado.append([i, j, k])
-print(resultado)
-'''
-res = [
-    [i, j, k]
-    for i in range(x + 1)
-    for j in range(y + 1)
-    for k in range(z + 1)
-    if i + j + k != n
-]
+print("\n")
 
-print(res)
+# try except else
+try:
+    print(numero_1 + numero_2)
+    print("No se ha producido un error")
+except:
+    print("Se a producido un error")
+else:       
+    # else es opcional y se ejecuta si no se produce ninguna excepción en el bloque try
+    print("La ejecucion continua correctamente")
 
-#EJERCICIO
+print("\n")
 
-'''
-n = int(input("Hasta que numero quieres hacer tu lista?: "))
-concatenar = ""
-for i in range(n):
-    concatenar += str(i + 1)
-print(concatenar)
+# try except else finally
+try:
+    print(numero_1 + numero_2)
+    print("No se ha producido un error")
+except:
+    print("Se a producido un error")
+else:       
+    # else es opcional y se ejecuta si no se produce ninguna excepción en el bloque try
+    print("La ejecucion continua correctamente")
+finally:    
+    # finally es opcional y se ejecuta siempre, independientemente de si se produce una excepción o no
+    print("La ejecucion ha finalizado")
 
-#lista
-n2 = int(input("Hasta que numero quieres hacer tu lista?: "))
-my_list= list(range(1,n2+1))
-print(my_list)
-'''
+print("\n")
 
-#MAS OPTIMO
-###############################################################
+# Excepción por tipo
+try:
+    print(numero_1 + numero_2)
+    print("No se ha producido un error")
+except TypeError: # 'Tipo incorrecto' - tipo de excepción que se produce cuando se intenta realizar una operación con tipos de datos incompatibles
+    # se ejecuta si se produce un error de tipo en el bloque try
+    print("Se ha producido un TypeError")
+except ValueError: # 'Valor incorrecto' - tipo de excepción que se produce cuando se intenta convertir un valor a un tipo de dato incompatible
+    # se ejecuta si se produce un error de valor en el bloque try
+    print("Se ha producido un ValueError")
 
-n = int(input("Hasta qué número quieres hacer tu lista?: "))
-    # Generar lista de strings con comprensión de listas
-numeros = [str(i + 1) for i in range(n)]
-    # Unir todos los elementos en una sola cadena
-concatenar = "".join(numeros)
-print(concatenar)
+print("\n")
 
-###############################################################
+# Captura de la información de la excepción
+try:
+    print(numero_1 + numero_2)
+    print("No se ha producido un error")
+except TypeError as error: 
+    print(f"TypeError {error}")
+except Exception as error: # exception es la clase base para todas las excepciones en Python, y permite capturar cualquier tipo de excepción que se produzca en el bloque try
+    # as error permite capturar la información de la excepción y almacenarla en una variable
+    print(f"Se ha producido un error: {error}")
 
-n = int(input("Hasta qué número quieres hacer tu lista?: "))
-    # map convierte cada número en string directamente
-concatenar = "".join(map(str, range(1, n + 1)))
-print(concatenar)
-
-###############################################################
-
-
-
-
-def is_leap(year):
-    leap = False
-    if year % 4 == 0:
-        leap = True
-        if year % 100 == 0:
-            leap = False
-            if year % 400 == 0:
-                leap = True
-    # Write your logic here
-    
-    return leap
-
-year = int(input())
-print(is_leap(year))
-
-'''
-the year is bisiesto si:
-ES divisible por 400, o
-ES divisible por 4 Pero no por 100
-# return (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0)
-
-the year is bisiesto si:
-ES divisible por 4, y
-No es divisible por 100 o es divisible por 400
-# return year % 4 == 0 and (year %  100 != 0 or year % 400 == 0)
-'''
-def is_leap(year):
-    # Write your logic here
-    return year % 4 == 0 and (year %  100 != 0 or year % 400 == 0)
-
-year = int(input())
-print(is_leap(year))
-
-
-
-
-
+print("\n")
